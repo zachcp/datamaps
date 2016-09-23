@@ -1,7 +1,7 @@
 (ns datamaps.core
   (:require [datamaps.query :as d]
             [datamaps.facts :as df])
-  (:import [datamaps.facts FactStore] ))
+  (:import [datamaps.facts FactStore]))
 
 
 

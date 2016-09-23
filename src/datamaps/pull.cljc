@@ -280,4 +280,4 @@
 
 (defn pull-many [facts selector eids]
   {:pre [(df/factstore? facts)]}
-    (pull-spec facts (dpp/parse-pull selector) eids true))
+  (pull-spec facts (dpp/parse-pull selector) eids true))

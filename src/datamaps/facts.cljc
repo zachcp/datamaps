@@ -78,13 +78,15 @@
    maps nested within a collections. Collections will imply a many
    relation"
   ([m]
-   (let [id (java.util.UUID/randomUUID)]
+   (let [id  #?(:clj  (java.util.UUID/randomUUID)
+                :cljs (random-uuid))]
      (->> (seq m)
           (map (partial map-entry->fact id))
           (filter identity)
           (reduce concat))))
   ([parent key m]
-   (let [id (java.util.UUID/randomUUID)]
+   (let [id #?(:clj  (java.util.UUID/randomUUID)
+               :cljs (random-uuid))]
      (->> (seq m)
           (mapcat (partial map-entry->fact id))
           (filter identity)
